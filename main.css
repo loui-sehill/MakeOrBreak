@@ -1,0 +1,141 @@
+body{
+    background-color: #9fa8a3 ;
+    touch-action: none;
+}
+
+ul, li{
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+
+.hidden{
+    display:none;
+}
+
+.habitSlider{
+
+}
+.habitInstance{
+    position: relative;
+    border-bottom: 1px solid darkgray;
+    padding: 10px 0 0 20px;
+}
+.habitName{
+    text-align: left;
+    margin-left: 5%;
+}
+
+
+
+.dropdown{
+    position:absolute;
+    width:30px;
+    height:20px;
+    top: 7px;
+    right:10px;
+}
+.optionButton{
+    position: absolute;
+    top:10px;
+    right:10px;
+}
+.displayOptionList{
+    border: 1px solid #ddd;
+    border-radius: .5em;
+    display:inline;
+    position: absolute;
+    top:0;
+    left:20px;
+}
+.optionList > li > .ui-btn{
+    border:none;
+}
+.optionList > li > .ui-btn-corner-all{
+    border-radius: 0;
+}
+.optionList > li >  .ui-shadow{
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+.ui-btn{
+    margin:0;
+}
+.ui-hidden-accessible{
+    display:none;
+}
+.ui-slider-track{
+    margin:0 60px 0 5px;
+}
+.ui-content{
+    overflow:visible;
+}
+
+
+.error{
+    color: red;
+}
+
+.selectedBreak{
+ /*   background-color: #ffcccc  !important;    */
+    background-color: #F44336  !important;
+}
+.selectedMake{
+    background-color: #32CD32 !important;
+/*    background-color: #d9ffb3 !important;     */
+}
+
+
+#makeHueList option:nth-child(2){
+    background-color: #32CD32;
+}
+#makeHueList option:nth-child(3){
+    background-color: #228B22;
+}
+#makeHueList option:nth-child(4){
+    background-color: #006400;
+}
+#makeHueList option:nth-child(5){
+    background-color: #556B2F;
+}
+
+#breakHueList option:nth-child(2){
+    background-color: #F44336;
+}
+#breakHueList option:nth-child(3){
+    background-color: #B73229;
+}
+#breakHueList option:nth-child(4){
+    background-color: #992A22;
+}
+#breakHueList option:nth-child(5){
+    background-color: #7A221B;
+}
+
+
+.good{
+    color: darkgreen;
+}
+.bad{
+    color: darkred;
+}
+
+
+.glowRed .ui-slider .ui-btn{
+    box-shadow: 0 0 12px #F50024;
+}
+.glowOrange .ui-slider .ui-btn{
+    box-shadow: 0 0 12px #F88B01;
+}
+.glowYellow .ui-slider .ui-btn{
+    box-shadow: 0 0 12px #B9FB03;
+}
+.glowGreen .ui-slider .ui-btn{
+    box-shadow: 0 0 12px #0BFF05;
+}
