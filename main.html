@@ -23,7 +23,7 @@
 <div data-role="page" id="home"  data-theme="a">
     <div data-role="header">
         <h1>Make or Break</h1>
-        <a href="#addHabitPage" class="ui-btn-right" data-role="button" data-icon="plus" data-iconpos="notext"></a>
+        <a href="#addHabitPage" class="ui-btn-right" data-role="button" data-icon="plus" data-iconpos="notext" id="showAddHabitPage"></a>
     </div>
 
     <div data-role="content">
@@ -67,8 +67,14 @@
 
 <div data-role="page" id="addHabitPage">
     <div data-role="header">
-        <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-icon="back">Back</a>
-        <a href="#home" class="ui-btn-right" data-role="button" data-icon="check" data-iconpos="notext" onclick="verifyHabitForm()"></a>
+        <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-icon="back" onclick="resetHabitForm()">Back</a>
+
+        <a class="ui-btn-right" data-role="button" data-icon="refresh" data-iconpos="notext" id="resetHabitForm" onclick="resetHabitForm()"></a>
+
+        <a class="ui-btn-right" data-role="button" data-icon="check" data-iconpos="notext" id="addHabitConfirm" onclick="addHabit()"></a>
+        <a class="ui-btn-right" data-role="button" data-icon="check" data-iconpos="notext" id="confirmEdit" onclick="confirmEdit()"></a>
+
+
     </div>
     <div data-role="main" class="ui-content">
 
@@ -82,6 +88,8 @@
                     <button onclick="breakHabitSelect()" id="habitTypeBreak">Break</button>
                 </div>
             </fieldset>
+
+        <form id="addForm">
             <p id="habitTypeSelection"></p>
             <label for="habitName">Name</label>
             <input type="text" name="habitName" id="habitName">
@@ -95,7 +103,7 @@
             <div class="hidden" id="makeHues">
                 <label for="makeHueList"></label>
                 <select name="makeHueList" id="makeHueList" >
-                    <option value="0" disabled selected>Colour</option>
+                    <option value="0">Colour</option>
                     <option value="1">#32CD32</option>
                     <option value="2">#228B22</option>
                     <option value="3">#006400</option>
@@ -105,15 +113,17 @@
             <div class="hidden" id="breakHues">
                 <label for="breakHueList"></label>
                 <select name="breakHueList" id="breakHueList" >
-                    <option value="0" disabled selected>Colour</option>
+                    <option value="0">Colour</option>
                     <option value="1">#F44336</option>
                     <option value="2">#B73229</option>
                     <option value="3">#992A22</option>
                     <option value="4">#7A221B</option>
 
                 </select>
-        </div>
-
+            </div>
+            <p id="errorMessage" class="error"></p>
+            <p id="habitRef" ></p>
+        </form>
 
 
 

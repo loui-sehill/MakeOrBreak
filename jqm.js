@@ -105,7 +105,7 @@ function Habit(mOB, hName, sDate, eDate, cTheme){
     function addHabitData(inputDate, habitRating) {
 
         habitData[dataCount] = new HabitData(iDate, hRating);
-
+        dataCount ++;
     }
 }
 
@@ -118,125 +118,88 @@ function Habit(mOB, hName, sDate, eDate, cTheme){
 function addHabit(){
     console.log("addHabit called");
 
-
+    if(verifyHabitForm() == false){
         var makeOrBreak = " ";
         var name;
         var startDate;
         var endDate;
         var colorTheme;
-        if(document.getElementById("habitTypeMake").classList.contains("selectedMake")){
+        if($("#habitTypeMake").hasClass("selectedMake")){
             makeOrBreak = "make";
         }
-        if(document.getElementById("habitTypeBreak").classList.contains("selectedBreak")){
+        if($("#habitTypeBreak").hasClass("selectedBreak")){
             makeOrBreak = "break";
         }
         name = $("#habitName").val();
-        console.log(name +" name");
+
         startDate = $("#startDate").val();
-        console.log(startDate);
+
         endDate = $("#endDate").val();
-        console.log("");
+
         if(makeOrBreak == "make"){
             colorTheme = $("#makeHueList").val();
-            console.log("");
+
         }
         if(makeOrBreak == "break"){
-            colorTheme = $("#makeHueList").val();
-            console.log("");
+            colorTheme = $("#breakHueList").val();
+
         }
         console.log("counter is " + counter);
 
         habitListArray [counter] = new Habit(makeOrBreak, name, startDate, endDate, colorTheme);
-
-
-        console.log(habitListArray[counter]);
+        console.log("Just added:   " + habitListArray[counter] );
+        console.log();
         createInstance();
+    }
+
 }
 
 function verifyHabitForm(){
 
     console.log("verifyHabitForm called");
 
-
-    var errorMessage = $("<p></p>").addClass("error").text("Please choose to make or break a habit");
     var error = false;
-
     var habitTypeSelected = $("#habitTypeMake").hasClass("selectedMake") || $("#habitTypeBreak").hasClass("selectedBreak");
     var nameVal =  $("#habitName").val().length;
     var startVal = $("#startDate").val().length;
     var endVal = $("#endDate").val().length;
+    var makeColorChoice =  $("#makeHueList").val();
+    var breakColorChoice = $("#breakHueList").val();
 
-    console.log("name val is " + nameVal);
-    console.log("habit type selected : " +habitTypeSelected);
-    if(!habitTypeSelected){
-        console.log("habitselection false");
-        $("#habitTypeSelection").text("Please choose to make or break a habit").addClass("error");
+    console.log("makeSelect = " + makeColorChoice);
+    console.log("breakSelect = " + breakColorChoice);
+    if((!habitTypeSelected)||(nameVal == 0)||(startVal == 0)||(endVal == 0)){
         error = true;
+    }
+    if((makeColorChoice == 0) && (breakColorChoice == 0)){
+        error = true;
+    }
+
+    console.log(error);
+    if (error == false){
+        $("#errorMessage").empty();
     }
     else{
-        $("#habitTypeSelection").text("");
-
+        $("#errorMessage").text("! ! All fields are required ! !");
     }
-    if(nameVal == 0){
-        console.log("error no name");
-        $("label[for='habitName']").text("Please name your habit.").addClass("error");
-        error = true;
-    }
-    else{
-        $("label[for='habitName']").text("Name").removeClass("error");
-        error = false;
-    }
-
-
-    console.log("startDate length: " + $("#startDate").val().length );
-
-    if(startVal == 0){
-        $("label[for='startDate']").text("Please choose start date.").addClass("error");
-        error = true;
-    }
-    else{
-        $("label[for='startDate']").text("Start").removeClass("error");
-        error = false;
-    }
-    if(endVal == 0){
-        $("label[for='endDate']").text("Please choose date.").addClass("error");
-        error = true;
-    }
-    else{
-        $("label[for='endDate']").text("End").removeClass("error");
-        error = false;
-    }
-    if((document.getElementById("habitTypeMake").classList.contains("selectedMake"))
-        && ($("#makeHueList").value == 0)){
-        $("label[for='makeHueList']").text("Please choose color.").addClass("error");
-        error = true;
-    }
-    else{
-        $("label[for='startDate']").text("Start").removeClass("error");
-        error = false;
-    }
-    if((document.getElementById("habitTypeBreak").classList.contains("selectedBreak"))
-        && ($("#breakHueList").value == 0)){
-        $("label[for='breakHueList']").text("Please choose color.").addClass("error");
-        error = true;
-    }
-    if (error != true){
-        addHabit();
-    }
-
-
-
-
-
+    return error;
 }
 
+function resetHabitForm(){
+    $("#habitTypeBreak").removeClass("selectedBreak");
+    $("#habitTypeMake").removeClass("selectedMake");
+    $("#breakHues , #makeHues").removeClass("hidden");
+    $("#breakHues , #makeHues").addClass("hidden");
 
+    $("#addForm")[0].reset();
+    $("#errorMessage").empty();
+}
 
 function createInstance(){
 
     console.log("createInstanceCalled");
     var liHabitInstance = $("<li></li>").addClass("habitInstance");
-    var pHabitNo = $("<p></p>").addClass("habitNumber").text(counter);
+    var pHabitNo = $("<p></p>").addClass("habitNumber ").text(counter);
     var dGlow = $("<div></div>").addClass("glow");
 
     var iHabitSlider = $("<input />").addClass("habitSlider ui-hidden-accessible ui-shadow-inset ui-body-inherit ui-corner-all ui-slider-input").attr({
@@ -266,7 +229,7 @@ function createInstance(){
         "data-role" : "button",
         "data-icon" : "edit",
         "data-iconpos" : "notext",
-        "onclick" : "editHabitInfo()",
+        "onclick" : "editHabitInfo(event)",
         "role" : "button"
     });
     var aDelete = $("<a></a>").text("Delete").addClass("ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all").attr({
@@ -306,21 +269,106 @@ function createInstance(){
     $("#emptyHabits").css({"display": "none"});
 }
 
-function editHabitInfo(){
-    $("optionButton").click(function() {
-        // `this` is the DOM element that was clicked
-        var index = document.getElementsByClassName("optionButton").index( this );
+function editHabitInfo(event){
 
-        if(habitListArray[index].makeOrBreak == "make"){
+    var thisHabitPosition = $(event.target).parentsUntil(".habitInstance").siblings(".habitNumber").text();
+    console.log("habitNumber = " + thisHabitPosition);
 
-        }
+    resetHabitForm();
 
+    if(habitListArray[thisHabitPosition].makeOrBreak == "make"){
+        makeHabitSelect();
+        $("#makeHueList").val(habitListArray[thisHabitPosition].colorTheme);
+    }
+    if(habitListArray[thisHabitPosition].makeOrBreak == "break"){
+        breakHabitSelect();
+        $("#BreakHueList").val(habitListArray[thisHabitPosition].colorTheme);
+    }
 
+    $("#habitName").val(habitListArray[thisHabitPosition].name);
+    $("#startDate").val(habitListArray[thisHabitPosition].startDate);
+    $("#endDate").val(habitListArray[thisHabitPosition].endDate);
+    $("#").val(habitListArray[thisHabitPosition]);
 
-        $( "span" ).text( "That was o Button index #" + index );
-        $("optionButton").classList.toggle("show");
-    });
+    $("#confirmEdit").css({"display":"inline"});
+    $("#addHabitConfirm").css({"display":"none"});
+
+    $("#habitRef").text(thisHabitPosition);
+
 
 }
 
+function confirmEdit(){
+    if(verifyHabitForm() == false){
+
+        console.log("habit edit confirmed and valid");
+
+
+
+
+        var habitPosRef = $("#habitRef").text();
+
+        console.log(habitPosRef);
+
+
+        console.log(habitListArray[habitPosRef]);
+
+        if($("#habitTypeMake").hasClass("selectedMake")){
+            habitListArray[habitPosRef].makeOrBreak = "make";
+            console.log(habitListArray[habitPosRef].makeOrBreak);
+        }
+        if($("#habitTypeBreak").hasClass("selectedBreak")){
+            habitListArray[habitPosRef].makeOrBreak = "break";
+            console.log(habitListArray[habitPosRef].makeOrBreak);
+        }
+        habitListArray[habitPosRef].name = $("#habitName").val();
+        console.log(habitListArray[habitPosRef].name);
+        habitListArray[habitPosRef].startDate = $("#startDate").val();
+        habitListArray[habitPosRef].endDate = $("#endDate").val();
+        if(habitListArray[habitPosRef].makeOrBreak == "make"){
+            habitListArray[habitPosRef].colorTheme = $("#makeHueList").val();
+
+        }
+        if(habitListArray[habitPosRef].makeOrBreak == "break"){
+            habitListArray[habitPosRef].colorTheme = $("#breakHueList").val();
+
+        }
+
+        /*
+        *
+        * Problem area, everything works apart from changing habit name in instance
+        * Have a plan to fix (changing all p / h4 placeholder elements for inputs and
+        * using value attr instead of text()), but will be tomorrow, going down to dumfries!
+        *
+        *
+        * */
+       var name = $("#habitName").val();
+        $(".habitNumber:contains(habitPosRed)").siblings(".habitName").text(name);
+
+
+        // if($(".habitNumber").text() == habitPosRef){
+        //     $(this).siblings(".habitName").text(habitListArray[habitPosRef].name);
+        //     console.log("it worked?");
+        // }
+        // var hNameFinder = habitListArray[habitPosRef].name;
+      //  $(".habitNumber:contains(habitPosRef)").siblings(".habitName").text(habitListArray[habitPosRef].name);
+        // if(("p.habitNumber").text() == habitPosRef){
+        //     $(this).siblings(".habitName").text(habitListArray[habitPosRef].name);
+        // }
+        //
+        // $(".habitNumber [value='habitPosRef']").siblings(".habitName").text(habitListArray[habitPosRef].name);
+        // $(".habitNumber").siblings(".habitName").text(habitListArray[habitPosRef].name);
+
+    }
+}
+
+
+$(document).ready(function(){
+
+
+    $("#showAddHabitPage").on("click", function () {
+        $("#confirmEdit").css({"display":"none"});
+        $("#addHabitConfirm").css({"display":"inline"});
+    })
+});
 
