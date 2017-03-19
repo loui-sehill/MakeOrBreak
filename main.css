@@ -40,6 +40,11 @@ ul, li{
     top:10px;
     right:10px;
 }
+.confirmHabitData{
+    position: absolute;
+    top:15px;
+    left:5px;
+}
 .displayOptionList{
     border: 1px solid #ddd;
     border-radius: .5em;
@@ -76,7 +81,7 @@ ul, li{
     display:none;
 }
 .ui-slider-track{
-    margin:0 60px 0 5px;
+    margin:0 60px 0 20px;
 }
 .ui-content{
     overflow:visible;
@@ -130,6 +135,9 @@ ul, li{
 }
 .bad{
     color: darkred;
+}
+#success{
+    display: none;
 }
 
 
