@@ -21,8 +21,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1794">
-              <caret line="42" column="8" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="8" />
+            <state relative-caret-position="-632">
+              <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -31,12 +31,11 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="71" lean-forward="true" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+            <state relative-caret-position="-264">
+              <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
               <folding>
                 <element signature="n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -45,64 +44,56 @@
       <file leaf-file-name="jqm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jqm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="237" column="37" lean-forward="false" selection-start-line="237" selection-start-column="37" selection-end-line="237" selection-end-column="37" />
+            <state relative-caret-position="1650">
+              <caret line="224" column="44" lean-forward="true" selection-start-line="224" selection-start-column="44" selection-end-line="224" selection-end-column="44" />
               <folding>
                 <element signature="n#!!block;n#addHabit#0" expanded="false" />
-                <element signature="e#551#596#0" expanded="false" />
-                <element signature="e#657#703#0" expanded="false" />
-                <element signature="e#862#924#0" expanded="false" />
-                <element signature="e#961#1024#0" expanded="false" />
+                <element signature="e#584#629#0" expanded="false" />
+                <element signature="e#690#736#0" expanded="false" />
+                <element signature="e#895#957#0" expanded="false" />
+                <element signature="e#994#1057#0" expanded="false" />
                 <element signature="n#!!block;n#Habit#0" expanded="false" />
-                <element signature="e#1683#1743#0" expanded="false" />
-                <element signature="e#1981#2095#0" expanded="false" />
-                <element signature="e#2097#2108#0" expanded="false" />
+                <element signature="e#1716#1776#0" expanded="false" />
+                <element signature="e#2014#2128#0" expanded="false" />
+                <element signature="e#2130#2141#0" expanded="false" />
                 <element signature="n#!!block;n#HabitData#0" expanded="false" />
                 <element signature="n#!!block;n#verifyHabitForm#0" expanded="false" />
-                <element signature="e#3412#3441#0" expanded="false" />
-                <element signature="e#3627#3656#0" expanded="false" />
-                <element signature="e#3716#3745#0" expanded="false" />
-                <element signature="e#3795#3838#0" expanded="false" />
-                <element signature="e#3848#3923#0" expanded="false" />
+                <element signature="e#3445#3474#0" expanded="false" />
+                <element signature="e#3660#3689#0" expanded="false" />
+                <element signature="e#3749#3778#0" expanded="false" />
+                <element signature="e#3828#3871#0" expanded="false" />
+                <element signature="e#3881#3956#0" expanded="false" />
                 <element signature="n#!!block;n#resetHabitForm#0" expanded="false" />
-                <element signature="n#!!block;n#createInstance#0" expanded="false" />
-                <element signature="e#5000#5169#0" expanded="false" />
-                <element signature="e#5370#5539#0" expanded="false" />
-                <element signature="e#5906#6107#0" expanded="false" />
-                <element signature="e#7118#7189#0" expanded="false" />
+                <element signature="e#5033#5202#0" expanded="false" />
+                <element signature="e#5939#6140#0" expanded="false" />
+                <element signature="e#7155#7226#0" expanded="false" />
                 <element signature="n#!!block;n#confirmHabitDataValue#0" expanded="false" />
                 <element signature="n#!!block;n#GlowColor#0" expanded="false" />
-                <element signature="e#8044#8082#0" expanded="false" />
-                <element signature="e#8145#8186#0" expanded="false" />
-                <element signature="e#8248#8289#0" expanded="false" />
-                <element signature="e#8353#8392#0" expanded="false" />
+                <element signature="e#8081#8119#0" expanded="false" />
+                <element signature="e#8182#8223#0" expanded="false" />
+                <element signature="e#8285#8326#0" expanded="false" />
+                <element signature="e#8390#8429#0" expanded="false" />
                 <element signature="n#!!block;n#habitColor#0" expanded="false" />
-                <element signature="e#8790#9459#0" expanded="false" />
-                <element signature="e#8800#9451#0" expanded="false" />
-                <element signature="e#9512#10179#0" expanded="false" />
-                <element signature="e#9522#10173#0" expanded="false" />
+                <element signature="e#8827#9496#0" expanded="false" />
+                <element signature="e#8837#9488#0" expanded="false" />
+                <element signature="e#9549#10216#0" expanded="false" />
+                <element signature="e#9559#10210#0" expanded="false" />
                 <element signature="n#!!block;n#graphShow#0" expanded="false" />
-                <element signature="n#!!block;n#toggleMenuShow#0" expanded="false" />
                 <element signature="n#!!block;n#editHabitInfo#0" expanded="false" />
-                <element signature="e#11003#11071#0" expanded="false" />
-                <element signature="e#11149#11219#0" expanded="false" />
-                <element signature="e#11685#13259#0" expanded="false" />
-                <element signature="e#11956#12129#0" expanded="false" />
-                <element signature="e#12190#12364#0" expanded="false" />
-                <element signature="e#12772#12879#0" expanded="false" />
-                <element signature="e#12961#13069#0" expanded="false" />
+                <element signature="e#11040#11108#0" expanded="false" />
+                <element signature="e#11186#11256#0" expanded="false" />
+                <element signature="e#11722#13296#0" expanded="false" />
+                <element signature="e#11993#12166#0" expanded="false" />
+                <element signature="e#12227#12401#0" expanded="false" />
+                <element signature="e#12809#12916#0" expanded="false" />
+                <element signature="e#12998#13106#0" expanded="false" />
                 <element signature="n#!!block;n#makeHabitSelect#0" expanded="false" />
                 <element signature="n#!!block;n#breakHabitSelect#0" expanded="false" />
                 <element signature="n#!!block;n#success#0" expanded="false" />
-                <element signature="n#!!block;n#drawBasic#0" expanded="false" />
-                <element signature="e#14334#14529#0" expanded="false" />
-                <element signature="e#14548#14676#0" expanded="false" />
-                <element signature="e#14565#14608#0" expanded="false" />
-                <element signature="e#14625#14670#0" expanded="false" />
+                <element signature="e#14371#14566#0" expanded="false" />
                 <element signature="n#!!block;n#removal#0" expanded="false" />
                 <element signature="n#!!block;n#removeHabit#0" expanded="false" />
-                <element signature="e#15575#15879#0" expanded="false" />
-                <element signature="e#15759#15876#0" expanded="false" />
+                <element signature="e#16093#16210#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -119,6 +110,7 @@
       <find>habitNumber</find>
       <find>nth</find>
       <find>console.log(&quot;</find>
+      <find>dropdown</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,8 +120,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/main.css" />
-        <option value="$PROJECT_DIR$/main.html" />
+        <option value="$PROJECT_DIR$/icon-pack-custom.css" />
+        <option value="$PROJECT_DIR$/icon-pack-custom.scss" />
+        <option value="$PROJECT_DIR$/icon-pack-custom.less" />
         <option value="$PROJECT_DIR$/jqm.js" />
+        <option value="$PROJECT_DIR$/main.html" />
       </list>
     </option>
   </component>
@@ -180,7 +175,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Prog Mobile Devices/wwwroot/icons" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -268,18 +263,18 @@
       <option name="presentableId" value="Default" />
       <updated>1489779178271</updated>
       <workItem from="1489779180008" duration="29786000" />
-      <workItem from="1489954723827" duration="18578000" />
+      <workItem from="1489954723827" duration="27441000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48364000" />
+    <option name="totallyTimeSpent" value="57227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1272" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13671875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1765625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -305,7 +300,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -325,7 +320,6 @@
           <folding>
             <element signature="n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -336,144 +330,159 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#addHabit#0" expanded="false" />
-            <element signature="e#551#596#0" expanded="false" />
-            <element signature="e#657#703#0" expanded="false" />
-            <element signature="e#862#924#0" expanded="false" />
-            <element signature="e#961#1024#0" expanded="false" />
+            <element signature="e#584#629#0" expanded="false" />
+            <element signature="e#690#736#0" expanded="false" />
+            <element signature="e#895#957#0" expanded="false" />
+            <element signature="e#994#1057#0" expanded="false" />
             <element signature="n#!!block;n#Habit#0" expanded="false" />
-            <element signature="e#1683#1743#0" expanded="false" />
-            <element signature="e#1981#2095#0" expanded="false" />
-            <element signature="e#2097#2108#0" expanded="false" />
+            <element signature="e#1716#1776#0" expanded="false" />
+            <element signature="e#2014#2128#0" expanded="false" />
+            <element signature="e#2130#2141#0" expanded="false" />
             <element signature="n#!!block;n#HabitData#0" expanded="false" />
             <element signature="n#!!block;n#verifyHabitForm#0" expanded="false" />
-            <element signature="e#3412#3441#0" expanded="false" />
-            <element signature="e#3627#3656#0" expanded="false" />
-            <element signature="e#3716#3745#0" expanded="false" />
-            <element signature="e#3795#3838#0" expanded="false" />
-            <element signature="e#3848#3923#0" expanded="false" />
+            <element signature="e#3445#3474#0" expanded="false" />
+            <element signature="e#3660#3689#0" expanded="false" />
+            <element signature="e#3749#3778#0" expanded="false" />
+            <element signature="e#3828#3871#0" expanded="false" />
+            <element signature="e#3881#3956#0" expanded="false" />
             <element signature="n#!!block;n#resetHabitForm#0" expanded="false" />
-            <element signature="n#!!block;n#createInstance#0" expanded="false" />
-            <element signature="e#5000#5169#0" expanded="false" />
-            <element signature="e#5370#5539#0" expanded="false" />
-            <element signature="e#5906#6107#0" expanded="false" />
-            <element signature="e#7118#7189#0" expanded="false" />
+            <element signature="e#5033#5202#0" expanded="false" />
+            <element signature="e#5939#6140#0" expanded="false" />
+            <element signature="e#7155#7226#0" expanded="false" />
             <element signature="n#!!block;n#confirmHabitDataValue#0" expanded="false" />
             <element signature="n#!!block;n#GlowColor#0" expanded="false" />
-            <element signature="e#8044#8082#0" expanded="false" />
-            <element signature="e#8145#8186#0" expanded="false" />
-            <element signature="e#8248#8289#0" expanded="false" />
-            <element signature="e#8353#8392#0" expanded="false" />
+            <element signature="e#8081#8119#0" expanded="false" />
+            <element signature="e#8182#8223#0" expanded="false" />
+            <element signature="e#8285#8326#0" expanded="false" />
+            <element signature="e#8390#8429#0" expanded="false" />
             <element signature="n#!!block;n#habitColor#0" expanded="false" />
-            <element signature="e#8790#9459#0" expanded="false" />
-            <element signature="e#8800#9451#0" expanded="false" />
-            <element signature="e#9512#10179#0" expanded="false" />
-            <element signature="e#9522#10173#0" expanded="false" />
+            <element signature="e#8827#9496#0" expanded="false" />
+            <element signature="e#8837#9488#0" expanded="false" />
+            <element signature="e#9549#10216#0" expanded="false" />
+            <element signature="e#9559#10210#0" expanded="false" />
             <element signature="n#!!block;n#graphShow#0" expanded="false" />
-            <element signature="n#!!block;n#toggleMenuShow#0" expanded="false" />
             <element signature="n#!!block;n#editHabitInfo#0" expanded="false" />
-            <element signature="e#11003#11071#0" expanded="false" />
-            <element signature="e#11149#11219#0" expanded="false" />
-            <element signature="e#11685#13259#0" expanded="false" />
-            <element signature="e#11956#12129#0" expanded="false" />
-            <element signature="e#12190#12364#0" expanded="false" />
-            <element signature="e#12772#12879#0" expanded="false" />
-            <element signature="e#12961#13069#0" expanded="false" />
+            <element signature="e#11040#11108#0" expanded="false" />
+            <element signature="e#11186#11256#0" expanded="false" />
+            <element signature="e#11722#13296#0" expanded="false" />
+            <element signature="e#11993#12166#0" expanded="false" />
+            <element signature="e#12227#12401#0" expanded="false" />
+            <element signature="e#12809#12916#0" expanded="false" />
+            <element signature="e#12998#13106#0" expanded="false" />
             <element signature="n#!!block;n#makeHabitSelect#0" expanded="false" />
             <element signature="n#!!block;n#breakHabitSelect#0" expanded="false" />
             <element signature="n#!!block;n#success#0" expanded="false" />
-            <element signature="n#!!block;n#drawBasic#0" expanded="false" />
-            <element signature="e#14334#14529#0" expanded="false" />
-            <element signature="e#14548#14676#0" expanded="false" />
-            <element signature="e#14565#14608#0" expanded="false" />
-            <element signature="e#14625#14670#0" expanded="false" />
+            <element signature="e#14371#14566#0" expanded="false" />
             <element signature="n#!!block;n#removal#0" expanded="false" />
             <element signature="n#!!block;n#removeHabit#0" expanded="false" />
-            <element signature="e#15575#15879#0" expanded="false" />
-            <element signature="e#15759#15876#0" expanded="false" />
+            <element signature="e#16093#16210#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1794">
-          <caret line="42" column="8" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="8" />
+        <state relative-caret-position="-632">
+          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/icon-pack-custom.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/icon-pack-custom.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="51" lean-forward="false" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="31" column="75" lean-forward="false" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/icon-pack-custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jqm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="237" column="37" lean-forward="false" selection-start-line="237" selection-start-column="37" selection-end-line="237" selection-end-column="37" />
+        <state relative-caret-position="1650">
+          <caret line="224" column="44" lean-forward="true" selection-start-line="224" selection-start-column="44" selection-end-line="224" selection-end-column="44" />
           <folding>
             <element signature="n#!!block;n#addHabit#0" expanded="false" />
-            <element signature="e#551#596#0" expanded="false" />
-            <element signature="e#657#703#0" expanded="false" />
-            <element signature="e#862#924#0" expanded="false" />
-            <element signature="e#961#1024#0" expanded="false" />
+            <element signature="e#584#629#0" expanded="false" />
+            <element signature="e#690#736#0" expanded="false" />
+            <element signature="e#895#957#0" expanded="false" />
+            <element signature="e#994#1057#0" expanded="false" />
             <element signature="n#!!block;n#Habit#0" expanded="false" />
-            <element signature="e#1683#1743#0" expanded="false" />
-            <element signature="e#1981#2095#0" expanded="false" />
-            <element signature="e#2097#2108#0" expanded="false" />
+            <element signature="e#1716#1776#0" expanded="false" />
+            <element signature="e#2014#2128#0" expanded="false" />
+            <element signature="e#2130#2141#0" expanded="false" />
             <element signature="n#!!block;n#HabitData#0" expanded="false" />
             <element signature="n#!!block;n#verifyHabitForm#0" expanded="false" />
-            <element signature="e#3412#3441#0" expanded="false" />
-            <element signature="e#3627#3656#0" expanded="false" />
-            <element signature="e#3716#3745#0" expanded="false" />
-            <element signature="e#3795#3838#0" expanded="false" />
-            <element signature="e#3848#3923#0" expanded="false" />
+            <element signature="e#3445#3474#0" expanded="false" />
+            <element signature="e#3660#3689#0" expanded="false" />
+            <element signature="e#3749#3778#0" expanded="false" />
+            <element signature="e#3828#3871#0" expanded="false" />
+            <element signature="e#3881#3956#0" expanded="false" />
             <element signature="n#!!block;n#resetHabitForm#0" expanded="false" />
-            <element signature="n#!!block;n#createInstance#0" expanded="false" />
-            <element signature="e#5000#5169#0" expanded="false" />
-            <element signature="e#5370#5539#0" expanded="false" />
-            <element signature="e#5906#6107#0" expanded="false" />
-            <element signature="e#7118#7189#0" expanded="false" />
+            <element signature="e#5033#5202#0" expanded="false" />
+            <element signature="e#5939#6140#0" expanded="false" />
+            <element signature="e#7155#7226#0" expanded="false" />
             <element signature="n#!!block;n#confirmHabitDataValue#0" expanded="false" />
             <element signature="n#!!block;n#GlowColor#0" expanded="false" />
-            <element signature="e#8044#8082#0" expanded="false" />
-            <element signature="e#8145#8186#0" expanded="false" />
-            <element signature="e#8248#8289#0" expanded="false" />
-            <element signature="e#8353#8392#0" expanded="false" />
+            <element signature="e#8081#8119#0" expanded="false" />
+            <element signature="e#8182#8223#0" expanded="false" />
+            <element signature="e#8285#8326#0" expanded="false" />
+            <element signature="e#8390#8429#0" expanded="false" />
             <element signature="n#!!block;n#habitColor#0" expanded="false" />
-            <element signature="e#8790#9459#0" expanded="false" />
-            <element signature="e#8800#9451#0" expanded="false" />
-            <element signature="e#9512#10179#0" expanded="false" />
-            <element signature="e#9522#10173#0" expanded="false" />
+            <element signature="e#8827#9496#0" expanded="false" />
+            <element signature="e#8837#9488#0" expanded="false" />
+            <element signature="e#9549#10216#0" expanded="false" />
+            <element signature="e#9559#10210#0" expanded="false" />
             <element signature="n#!!block;n#graphShow#0" expanded="false" />
-            <element signature="n#!!block;n#toggleMenuShow#0" expanded="false" />
             <element signature="n#!!block;n#editHabitInfo#0" expanded="false" />
-            <element signature="e#11003#11071#0" expanded="false" />
-            <element signature="e#11149#11219#0" expanded="false" />
-            <element signature="e#11685#13259#0" expanded="false" />
-            <element signature="e#11956#12129#0" expanded="false" />
-            <element signature="e#12190#12364#0" expanded="false" />
-            <element signature="e#12772#12879#0" expanded="false" />
-            <element signature="e#12961#13069#0" expanded="false" />
+            <element signature="e#11040#11108#0" expanded="false" />
+            <element signature="e#11186#11256#0" expanded="false" />
+            <element signature="e#11722#13296#0" expanded="false" />
+            <element signature="e#11993#12166#0" expanded="false" />
+            <element signature="e#12227#12401#0" expanded="false" />
+            <element signature="e#12809#12916#0" expanded="false" />
+            <element signature="e#12998#13106#0" expanded="false" />
             <element signature="n#!!block;n#makeHabitSelect#0" expanded="false" />
             <element signature="n#!!block;n#breakHabitSelect#0" expanded="false" />
             <element signature="n#!!block;n#success#0" expanded="false" />
-            <element signature="n#!!block;n#drawBasic#0" expanded="false" />
-            <element signature="e#14334#14529#0" expanded="false" />
-            <element signature="e#14548#14676#0" expanded="false" />
-            <element signature="e#14565#14608#0" expanded="false" />
-            <element signature="e#14625#14670#0" expanded="false" />
+            <element signature="e#14371#14566#0" expanded="false" />
             <element signature="n#!!block;n#removal#0" expanded="false" />
             <element signature="n#!!block;n#removeHabit#0" expanded="false" />
-            <element signature="e#15575#15879#0" expanded="false" />
-            <element signature="e#15759#15876#0" expanded="false" />
+            <element signature="e#16093#16210#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="71" lean-forward="true" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+        <state relative-caret-position="-264">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding>
             <element signature="n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

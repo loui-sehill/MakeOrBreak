@@ -8,7 +8,9 @@ ul, li{
     margin:0;
     padding: 0;
 }
-
+#chart_div{
+    margin: auto;
+}
 .hidden{
     display:none;
 }

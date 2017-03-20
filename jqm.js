@@ -7,6 +7,8 @@ var habitListArray = [];
 var passedElement;
 var currentSelectedHabitPosition;
 var currentSliderVal;
+var chartHeight;
+var chartWidth;
 
 
 function addHabit() {
@@ -206,6 +208,10 @@ function createInstance() {
         "onclick" : "removeHabit(this)",
         "role": "button"
     });
+
+
+
+
     var aGraph = $("<a></a>").text("Graph").addClass("ui-link ui-btn ui-icon-info ui-btn-icon-notext ui-shadow ui-corner-all").attr({
         "href": "#graphPage",
         "data-role": "button",
@@ -415,12 +421,18 @@ function drawBasic() {
         data.setValue(i, 1, habitListArray[currentSelectedHabitPosition].habitData[i].hRate);
     }
     var options = {
+        legend : 'none',
+        width: chartWidth,
+        height: chartHeight,
+        pointSize : 20,
+        pointShape : 'star',
         hAxis: {
             title: 'Input Date'
         },
         vAxis: {
             title: 'Habit rating'
         }
+
     };
     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
     chart.draw(data, options);
@@ -452,6 +464,12 @@ function removeHabit(elmnt){
 
 
 $(document).ready(function () {
+
+    chartHeight = ($(window).height())-100;
+    chartWidth = ($(window).width())-30;
+    console.log("chartH is " + chartHeight + " chartW is " + chartWidth);
+
+
     $("#remove").on("click", function () {
         console.log("remove pressed is true");
         removal(passedElement);
