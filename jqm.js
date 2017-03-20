@@ -4,7 +4,7 @@ google.charts.load('current', {packages: ['corechart', 'line']});
 
 var counter = 0;
 var habitListArray = [];
-var element = $(this);
+var passedElement;
 var currentSelectedHabitPosition;
 var currentSliderVal;
 
@@ -200,9 +200,10 @@ function createInstance() {
     var aDelete = $("<a></a>").text("Delete").addClass("ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all").attr({
         "href": "#deleteAlert",
         "data-role": "button",
+        "data-rel" : "popup",
         "data-icon": "delete",
         "data-iconpos": "notext",
-        "onclick": "delete(this)",
+        "onclick" : "removeHabit(this)",
         "role": "button"
     });
     var aGraph = $("<a></a>").text("Graph").addClass("ui-link ui-btn ui-icon-info ui-btn-icon-notext ui-shadow ui-corner-all").attr({
@@ -238,8 +239,8 @@ function confirmHabitDataValue(elmnt){
 
     var dateTime = new Date();
     var sliderRefPlace = parseInt($(elmnt).siblings(".habitNumber").text());
-    console.log("****** sliderValue = " + currentSliderVal);
-    console.log("*********** "+ habitListArray);
+    console.log("sliderValue = " + currentSliderVal);
+    console.log(habitListArray);
 
     habitListArray[sliderRefPlace].addHabitData(dateTime, currentSliderVal);
     $(elmnt).fadeOut();
@@ -281,7 +282,7 @@ function habitColor(ref) {
                 $(".habitName").eq(currentSelectedHabitPosition).css({"color": "#556B2F"});
                 break;
             default:
-                console.log("something fucked up");
+                console.log("something went wrong");
         }
 
 
@@ -301,7 +302,7 @@ function habitColor(ref) {
                 $(".habitName").eq(currentSelectedHabitPosition).css({"color": "#7A221B"});
                 break;
             default:
-                console.log("something fucked up");
+                console.log("something went wrong");
         }
     }
 
@@ -309,7 +310,7 @@ function habitColor(ref) {
 
 function graphShow(elmnt){
     currentSelectedHabitPosition = parseInt($(elmnt).parentsUntil(".habitInstance").siblings(".habitNumber").text());
-    console.log("currentHP is: " + currentSelectedHabitPosition);
+    console.log("currentHabitPosition is: " + currentSelectedHabitPosition);
     $("#chart_div").empty();
 
     $("#graphHeading").empty().text(habitListArray[currentSelectedHabitPosition].name);
@@ -424,9 +425,37 @@ function drawBasic() {
     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
     chart.draw(data, options);
 }
+function removal(elmnt){
+    console.log("remove is clicked.... pos below");
+    console.log(currentSelectedHabitPosition);
+    for( var i = currentSelectedHabitPosition; i < habitListArray.length; i++){
+        habitListArray[i] = habitListArray[i+1];
+    }
+    habitListArray.pop();
+    console.log("habit removed from array");
+
+    $(elmnt).parentsUntil("#habitList").remove();
+
+
+    for( var x = currentSelectedHabitPosition; x < habitListArray.length+1; x++) {
+        $(".habitNumber").eq(x).text(x);
+    }
+
+    counter --;
+    console.log(habitListArray);
+}
+
+function removeHabit(elmnt){
+    currentSelectedHabitPosition = parseInt($(elmnt).parentsUntil(".habitInstance").siblings(".habitNumber").text());
+    passedElement = elmnt;
+}
+
 
 $(document).ready(function () {
-
+    $("#remove").on("click", function () {
+        console.log("remove pressed is true");
+        removal(passedElement);
+    });
 
     $("#showAddHabitPage").on("click", function () {
         $("#confirmEdit").css({"display": "none"});

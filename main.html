@@ -16,7 +16,7 @@
 <body class="ui-nodisc-icon ui-alt-icon">
 
 <div data-role="page" id="home"  data-theme="a">
-    <div data-role="header">
+    <div data-role="header" data-position="fixed">
         <h1>Make or Break</h1>
         <a href="#addHabitPage" class="ui-btn-right" data-role="button" data-icon="plus" data-iconpos="notext" id="showAddHabitPage"></a>
     </div>
@@ -31,29 +31,24 @@
         <div id="habitListDiv">
             <ul id="habitList">
 
-            <!--
-                <li class="habitInstance ">
-                    <p class="habitNumber hidden"></p>
-                    <div class="glow">
-                        <input type="range" class="habitSlider ui-hidden-accessible"  min="-10" max="10" value="0"  />
-                    </div>
-                    <div class="dropdown">
-                        <a class="optionButton" data-role="button" data-icon="bars" data-iconpos="notext"></a>
-                        <ul class="hidden">
-                            <li><a href="#addHabitPage"  data-role="button" data-icon="edit" data-iconpos="notext" onclick="editHabitInfo()" >Edit</a></li>
-                            <li><a href="#deleteAlert" data-role="button" data-icon="delete"  data-iconpos="notext">Delete</a></li>
-                            <li><a href="#graphPage" data-role="button" data-icon="info"  data-iconpos="notext">Graph</a></li>
-                        </ul>
-                    </div>
-                    <h4 class="habitName"></h4>
-                </li>
-            -->
 
             </ul>
         </div>
 
     </div>
+    <div data-role="popup" id="deleteAlert">
+        <div data-role="header">
+            <h1>Delete Habit?</h1>
+        </div>
+        <div data-role="content">
+            <h3>Are you sure you want to delete this habit?</h3>
+            <p>This action cannot be undone.</p>
+            <a href="#" data-rel="back" data-role="button" data-icon="check"  id="remove" class="confirmButton">Yes</a>
+            <a href="#" data-rel="back" data-role="button" data-icon="delete"  class="confirmButton">No</a>
+        </div>
 
+
+    </div>
     <div data-role="footer" data-position="fixed">
         <h1>..You are stronger than you think..</h1>
     </div>
@@ -146,20 +141,10 @@
     </div>
 </div>
 
-<div data-role="dialog" id="deleteAlert">
-    <div data-role="content">
-        <h1>Are you sure you want to delete this habit?</h1>
 
-        <fieldset class="ui-grid-a">
-            <div class="ui-block-a"><a href="#" data-rel="back" data-transition="slide" data-direction="reverse" dataicon="back" id="confirmedDelete">Yes</a></div>
-            <div class="ui-block-b"><a href="#" data-rel="back" data-transition="slide" data-direction="reverse" dataicon="back">No</a></div>
-        </fieldset>
 
-    </div>
 
-    <div data-role="footer" data-position="fixed">
-    </div>
-</div>
+
 
 </div>
 
