@@ -15,6 +15,58 @@ ul, li{
     display:none;
 }
 
+
+.ui-icon-barChart:after {
+    background-image: url("svg_images/bar-chart-o.svg");
+    background-size: 18px 18px;
+}
+/* Fallback */
+.ui-nosvg .ui-icon-barChart:after {
+    background-image: url("png_images/bar-chart-o.png");
+    background-size: 18px 18px;
+}
+
+/*.ui-icon-thumbsUp:after {*/
+    /*background-image: url("svg_images/thumbs-o-up.svg");*/
+    /*background-size: 18px 18px;*/
+/*}*/
+/*!* Fallback *!*/
+/*.ui-nosvg .ui-icon-thumbsUp:after {*/
+    /*background-image: url("png_images/thumbs-o-up.png");*/
+    /*background-size: 18px 18px;*/
+/*}*/
+.ui-icon-smile:after {
+    background-image: url("svg_images/smile-o.svg");
+    background-size: 18px 18px;
+}
+/* Fallback */
+.ui-nosvg .ui-icon-smile:after {
+    background-image: url("png_images/smile-o.png");
+    background-size: 18px 18px;
+}
+.ui-icon-meh:after {
+    background-image: url("svg_images/meh-o.svg");
+    background-size: 18px 18px;
+}
+/* Fallback */
+.ui-nosvg .ui-icon-meh:after {
+    background-image: url("png_images/meh-o.png");
+    background-size: 18px 18px;
+}
+.ui-icon-frown:after {
+    background-image: url("svg_images/frown-o.svg");
+    background-size: 18px 18px;
+}
+/* Fallback */
+.ui-nosvg .ui-icon-frown:after {
+    background-image: url("png_images/frown-o.png");
+    background-size: 18px 18px;
+}
+
+
+
+
+
 .habitSlider{
 
 }

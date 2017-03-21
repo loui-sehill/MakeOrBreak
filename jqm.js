@@ -1,6 +1,5 @@
 /*problem with chrome passive event handlers*/
 google.charts.load('current', {packages: ['corechart', 'line']});
-//google.charts.setOnLoadCallback(drawBasic);
 
 var counter = 0;
 var habitListArray = [];
@@ -9,6 +8,7 @@ var currentSelectedHabitPosition;
 var currentSliderVal;
 var chartHeight;
 var chartWidth;
+var glowClass;
 
 
 function addHabit() {
@@ -212,10 +212,10 @@ function createInstance() {
 
 
 
-    var aGraph = $("<a></a>").text("Graph").addClass("ui-link ui-btn ui-icon-info ui-btn-icon-notext ui-shadow ui-corner-all").attr({
+    var aGraph = $("<a></a>").text("Graph").addClass("ui-link ui-btn ui-icon-barChart ui-btn-icon-notext ui-shadow ui-corner-all").attr({
         "href": "#graphPage",
         "data-role": "button",
-        "data-icon": "info",
+        "data-icon": "barChart",
         "data-iconpos": "notext",
         "onclick": "graphShow(this)",
         "role": "button"
@@ -240,34 +240,6 @@ function createInstance() {
     $(".linkContainer:last").append(aGraph);
     $("#emptyHabits").css({"display": "none"});
 }
-
-function confirmHabitDataValue(elmnt){
-
-    var dateTime = new Date();
-    var sliderRefPlace = parseInt($(elmnt).siblings(".habitNumber").text());
-    console.log("sliderValue = " + currentSliderVal);
-    console.log(habitListArray);
-
-    habitListArray[sliderRefPlace].addHabitData(dateTime, currentSliderVal);
-    $(elmnt).fadeOut();
-}
-function GlowColor(slider) {
-    currentSliderVal = slider.val();
-    var glowClass;
-    if ((currentSliderVal >= -10) && (currentSliderVal < -5)) {
-        glowClass = "glowRed";
-    } else if ((currentSliderVal >= -5 ) && (currentSliderVal < 0)) {
-        glowClass = "glowOrange";
-    } else if ((currentSliderVal >= 0 ) && (currentSliderVal < 5)) {
-        glowClass = "glowYellow";
-    } else if ((currentSliderVal >= 5 ) && (currentSliderVal <= 10)) {
-        glowClass = "glowGreen"
-    }
-
-    slider.parents(".glow").removeClass("glowRed glowOrange glowYellow glowGreen").addClass(glowClass);
-    $(slider).parentsUntil(".habitInstance").siblings(".confirmHabitData").fadeIn().delay(5000).fadeOut('slow');
-}
-
 function habitColor(ref) {
 
     var colorVal = (habitListArray[ref].colorTheme);
@@ -314,16 +286,84 @@ function habitColor(ref) {
 
 }
 
+function confirmHabitDataValue(elmnt){
+    $(elmnt).removeClass("ui-icon-check");
+    if(glowClass == "glowRed"){
+        $(elmnt).addClass("ui-icon-frown");
+    }
+    else if ((glowClass == "glowOrange")||(glowClass == "glowYellow")){
+        $(elmnt).addClass("ui-icon-meh");
+    }
+    else if(glowClass == "glowGreen"){
+        $(elmnt).addClass("ui-icon-smile");
+    }
+
+    var dateTime = new Date();
+    var sliderRefPlace = parseInt($(elmnt).siblings(".habitNumber").text());
+    console.log("sliderValue = " + currentSliderVal);
+    console.log(habitListArray);
+
+    habitListArray[sliderRefPlace].addHabitData(dateTime, currentSliderVal);
+
+    $(elmnt).fadeOut(1000);
+}
+function GlowColor(slider) {
+    currentSliderVal = slider.val();
+
+    if ((currentSliderVal >= -10) && (currentSliderVal < -5)) {
+        glowClass = "glowRed";
+    } else if ((currentSliderVal >= -5 ) && (currentSliderVal < 0)) {
+        glowClass = "glowOrange";
+    } else if ((currentSliderVal >= 0 ) && (currentSliderVal < 5)) {
+        glowClass = "glowYellow";
+    } else if ((currentSliderVal >= 5 ) && (currentSliderVal <= 10)) {
+        glowClass = "glowGreen"
+    }
+
+    slider.parents(".glow").removeClass("glowRed glowOrange glowYellow glowGreen").addClass(glowClass);
+    $(slider).parentsUntil(".habitInstance").siblings(".confirmHabitData").removeClass("ui-icon-frown ui-icon-meh ui-icon-smile").addClass("ui-icon-check");
+    $(slider).parentsUntil(".habitInstance").siblings(".confirmHabitData").fadeIn();
+}
+
+
+
 function graphShow(elmnt){
     currentSelectedHabitPosition = parseInt($(elmnt).parentsUntil(".habitInstance").siblings(".habitNumber").text());
     console.log("currentHabitPosition is: " + currentSelectedHabitPosition);
     $("#chart_div").empty();
-
     $("#graphHeading").empty().text(habitListArray[currentSelectedHabitPosition].name);
+
     drawBasic();
-
-
 }
+function drawBasic() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('date','X');
+    data.addColumn('number', 'Rating');
+    var numberOfHabits = habitListArray[currentSelectedHabitPosition].habitData.length;
+    data.addRows(numberOfHabits);
+
+    for(var i = 0; i < (numberOfHabits); i++){
+        data.setValue(i, 0, habitListArray[currentSelectedHabitPosition].habitData[i].iDate);
+        data.setValue(i, 1, habitListArray[currentSelectedHabitPosition].habitData[i].hRate);
+    }
+    var options = {
+        legend : 'none',
+        width: chartWidth,
+        height: chartHeight,
+        pointSize : 20,
+        pointShape : 'star',
+        hAxis: {
+            title: 'Input Date'
+        },
+        vAxis: {
+            title: 'Habit rating'
+        }
+
+    };
+    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+}
+
 function toggleMenuShow(elmnt) {
     $(elmnt).next("ul").toggleClass("displayOptionList");
     $(elmnt).next("ul").toggleClass("hidden");
@@ -409,34 +449,7 @@ function success(){
 
 }
 
-function drawBasic() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('date','X');
-    data.addColumn('number', 'Rating');
-    var numberOfHabits = habitListArray[currentSelectedHabitPosition].habitData.length;
-    data.addRows(numberOfHabits);
 
-    for(var i = 0; i < (numberOfHabits); i++){
-        data.setValue(i, 0, habitListArray[currentSelectedHabitPosition].habitData[i].iDate);
-        data.setValue(i, 1, habitListArray[currentSelectedHabitPosition].habitData[i].hRate);
-    }
-    var options = {
-        legend : 'none',
-        width: chartWidth,
-        height: chartHeight,
-        pointSize : 20,
-        pointShape : 'star',
-        hAxis: {
-            title: 'Input Date'
-        },
-        vAxis: {
-            title: 'Habit rating'
-        }
-
-    };
-    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
-}
 function removal(elmnt){
     console.log("remove is clicked.... pos below");
     console.log(currentSelectedHabitPosition);
@@ -456,7 +469,6 @@ function removal(elmnt){
     counter --;
     console.log(habitListArray);
 }
-
 function removeHabit(elmnt){
     currentSelectedHabitPosition = parseInt($(elmnt).parentsUntil(".habitInstance").siblings(".habitNumber").text());
     passedElement = elmnt;
