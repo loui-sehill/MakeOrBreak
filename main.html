@@ -23,6 +23,7 @@
 
 <div data-role="page" id="home"  data-theme="a">
     <div data-role="header" data-position="fixed">
+        <a href="#helpPop" class="ui-btn-left" data-rel="popup" data-iconpos="notext" data-icon="info"></a>
         <h1>Make or Break</h1>
         <a href="#addHabitPage" class="ui-btn-right" data-role="button" data-icon="plus" data-iconpos="notext" id="showAddHabitPage"></a>
     </div>
@@ -40,6 +41,8 @@
         </div>
 
     </div>
+
+
     <div data-role="popup" id="deleteAlert">
         <div data-role="header">
             <h1>Delete Habit?</h1>
@@ -57,7 +60,43 @@
                 </div>
             </fieldset>
         </div>
-
+    </div>
+    <div data-role="popup" id="helpPop">
+        <div data-role="header">
+            <h1>Help</h1>
+        </div>
+        <p>Get started making and breaking your habits today!</p>
+            <div data-role="collapsible">
+                <h4>Creating Habits</h4>
+                <p>On the home page press the <a data-role="button" data-iconpos="notext" data-inline="true" data-icon="plus"></a></p>
+                <p>Fill in form and confirm habit by pressing the <a data-role="button" data-iconpos="notext"  data-inline="true" data-icon="check"></a></p>
+                <p>To reset the form press <a data-role="button" data-iconpos="notext"  data-inline="true" data-icon="refresh"></a></p>
+            </div>
+            <div data-role="collapsible">
+                <h4>Logging Habit Data</h4>
+                <p>Move the slidebar to represent how well you have performed</p>
+                <p>The slidebar center will change color from red (bad) orange (not great) yellow (okay) to green (good).</p>
+                <p>Confirm habit data by pressing <a data-role="button" data-iconpos="notext"  data-inline="true" data-icon="check"></a></p>
+                <p>For a short time the icon will change to a smiley face reflecting how you have done <a data-role="button" data-iconpos="notext"  data-inline="true" data-icon="smile"></a></p>
+            </div>
+            <div data-role="collapsible">
+                <h4>Editing Habits</h4>
+                <p>Open the menu for the habit you would like to edit by pressing <a data-role="button" data-iconpos="notext"  data-inline="true" data-icon="bars"></a></p>
+                <p>Choose edit <a data-role="button" data-iconpos="notext"  data-inline="true" data-icon="edit"></a></p>
+                <p>Save any changes to the form by pressing <a data-role="button" data-iconpos="notext"  data-inline="true" data-icon="check"></a></p>
+            </div>
+            <div data-role="collapsible">
+                <h4>Deleting Habits</h4>
+                <p>Open the menu for the habit you would like to delete by pressing <a data-role="button" data-iconpos="notext"  data-inline="true" data-icon="bars"></a></p>
+                <p>Choose delete <a data-role="button" data-iconpos="notext"  data-inline="true" data-icon="edit"></a></p>
+                <p>Confirm delete</p>
+            </div>
+            <div data-role="collapsible">
+                <h4>Viewing Graph</h4>
+                <p>**To view graph properly, data must be logged first!**</p>
+                <p>Open the menu for the habit you would like to view the graph of by pressing <a data-role="button" data-iconpos="notext"  data-inline="true" data-icon="bars"></a></p>
+                <p>Choose Graph <a data-role="button" data-iconpos="notext"  data-inline="true" data-icon="barChart"></a></p>
+            </div>
 
     </div>
     <div data-role="footer" data-position="fixed">
@@ -149,9 +188,16 @@
     </div>
 </div>
 
+<div data-role="page" id="helpPage">
+    <div data-role="header" data-position="fixed">
 
+    </div>
+    <div data-role="main" class="ui-content">
 
+    </div>
+    <div data-role="footer" data-position="fixed">
 
+    </div>
 
 
 </div>

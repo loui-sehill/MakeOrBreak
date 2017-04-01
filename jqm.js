@@ -1,17 +1,29 @@
 /*problem with chrome passive event handlers*/
 google.charts.load('current', {packages: ['corechart', 'line']});
 
-var counter = 0;
-var habitListArray = [];
-var passedElement;
+var counter = 0; //counts number of elements in habitList
+var habitListArray = []; //container for habits
+var passedElement; //when a specific element is required for a function that isn't called by it, this variable holds the $(this) that that refers to
 var currentSelectedHabitPosition;
 var currentSliderVal;
 var chartHeight;
 var chartWidth;
-var glowClass;
+var glowClass; //holds the class that has been added to .glow
 
 
 function addHabit() {
+
+    /*Logs that addHabit() has been called
+     * if no problems with verifyHabitForm() then
+     * log counter value,
+     * retrieve add habit form data,
+     * create new Habit(....),
+     * createInstance() of habit in html
+     * habitColor() changes text of instance to selected color,
+     * counter is incremented,
+     * success() message displayed
+     * */
+
     console.log("addHabit called");
 
     if (verifyHabitForm() == false) {
@@ -55,6 +67,12 @@ function addHabit() {
 }
 
 function Habit(mOB, hName, sDate, eDate, cTheme) {
+
+    /*
+    * Object constructor for Habit,
+    * */
+
+
     this.makeOrBreak = mOB;
     this.name = hName;
     this.dateCreated = new Date();
@@ -64,34 +82,10 @@ function Habit(mOB, hName, sDate, eDate, cTheme) {
     this.habitData = [];
     this.dataCount = 0;
 
-    // function addHabitData(inputDate, habitRating ,habitRef) {
-    //     var count;
-    //     habitListArray[habitRef].habitData[count]
-    //
-    //     habitData[dataCount] = new HabitData(iDate, hRating);
-    //     dataCount++;
-    // }
     this.addHabitData = function (inputDate, habitRating){
         this.habitData[this.dataCount] = new HabitData(inputDate, habitRating);
         this.dataCount ++;
     }
-
-// <script>
-//     function person(firstName,lastName,age,eyeColor) {
-//         this.firstName = firstName;
-//         this.lastName = lastName;
-//         this.age = age;
-//         this.eyeColor = eyeColor;
-//         this.changeName = function (name) {
-//             this.lastName = name;
-//         }
-//     }
-//     var myMother = new person("Sally","Rally",48,"green");
-//     myMother.changeName("Doe");
-//     document.getElementById("demo").innerHTML =
-//         "My mother's last name is " + myMother.lastName;
-// </script>
-
 
 
 
@@ -105,11 +99,24 @@ function Habit(mOB, hName, sDate, eDate, cTheme) {
 }
 
 function HabitData(inputDate, habitRating) {
+    /*
+     * Object constructor for habitData
+     */
     this.iDate = inputDate;
     this.hRate = habitRating;
 }
 
 function verifyHabitForm() {
+
+    /*log verifyHabitForm has been called,
+     *returns a true or false value "error",
+     * check all required fields have been populated/selected
+     *log error value
+     * if error true - show error message
+     * if error false - remove error message
+     * return error
+     */
+
 
     console.log("verifyHabitForm called");
 
@@ -146,6 +153,13 @@ function verifyHabitForm() {
     return error;
 }
 function resetHabitForm() {
+
+    /*
+    * remove all selected fields
+    * reset addForm and empty error message
+    *
+     */
+
     $("#habitTypeBreak").removeClass("selectedBreak");
     $("#habitTypeMake").removeClass("selectedMake");
     $("#breakHues , #makeHues").removeClass("hidden");
@@ -156,19 +170,29 @@ function resetHabitForm() {
 }
 function createInstance() {
 
+    /*
+    * log createInstance() called,
+    * create references to created html elements
+    * assign those elements inside each other to create an instance of a habit
+     */
+
+
     console.log("createInstanceCalled");
-    var liHabitInstance = $("<li></li>").addClass("habitInstance");
-    var pHabitNo = $("<p></p>").addClass("habitNumber hidden").text(counter);
+    var liHabitInstance = $("<li></li>").addClass("habitInstance"); //this holds the whole habit
+    var pHabitNo = $("<p></p>").addClass("habitNumber hidden").text(counter); //this is always hidden from the user, but used to reference specific instances
     var aConfirmData = $("<a></a>").addClass("confirmHabitData hidden ui-link ui-btn ui-icon-check ui-btn-icon-notext ui-shadow ui-corner-all").attr({
         "data-role": "button",
         "data-icon": "check",
         "data-iconpos": "notext",
         "role": "button",
         "onclick": "confirmHabitDataValue(this)"
+    /*
+    *   this is hidden until the habitSlider changes value,
+    *   when clicked it will display a face (happy, neutral, sad) depending on the value of the slider,
+    *   when clicked it will add habitData to the habit with the number in the array the same as the closest hidden habitNumber    *
+     */
     });
-
     var dGlow = $("<div></div>").addClass("glow");
-
     var iHabitSlider = $("<input />").addClass("habitSlider ui-hidden-accessible ui-shadow-inset ui-body-inherit ui-corner-all ui-slider-input").attr({
         "type": "number",
         "data-type": "range",
@@ -176,15 +200,20 @@ function createInstance() {
         "max": "10",
         "value": "0",
         "onchange": "GlowColor($(this))"
+        /*
+        * when slider is moved and value changes, the glow surrounding the slider handle will change accordingly
+        * */
     });
     var dDropdown = $("<div></div>").addClass("dropdown");
-
     var aOptionButton = $("<a></a>").addClass("optionButton ui-link ui-btn ui-icon-bars ui-btn-icon-notext ui-shadow ui-corner-all").attr({
         "data-role": "button",
         "data-icon": "bars",
         "data-iconpos": "notext",
         "role": "button",
         "onclick": "toggleMenuShow(this)"
+        /*
+         * clicking this toggles the visability of the slibing element <ul>, which contains the edit, delete and graph button          *
+         */
     });
     var ulHidden = $("<ul></ul>").addClass("hidden");
     var liItem = $("<li></li>").addClass("linkContainer");
@@ -198,6 +227,10 @@ function createInstance() {
         "data-iconpos": "notext",
         "onclick": "editHabitInfo(this)",
         "role": "button"
+
+        /* clicking this will open up the (altered) addHabit page, containing all chosen information for this habit
+        * user can now change these and re-save
+        * */
     });
     var aDelete = $("<a></a>").text("Delete").addClass("ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all").attr({
         "href": "#deleteAlert",
@@ -207,10 +240,12 @@ function createInstance() {
         "data-iconpos": "notext",
         "onclick" : "removeHabit(this)",
         "role": "button"
+        /*
+        * clicking this will prompt the user to confirm if they wish to remove this habit in a popup
+        * if yes then habit instance and habit (in array) are removed, and all subsequent habits are shuffled down /
+        * and reference numbers changed
+        * */
     });
-
-
-
 
     var aGraph = $("<a></a>").text("Graph").addClass("ui-link ui-btn ui-icon-barChart ui-btn-icon-notext ui-shadow ui-corner-all").attr({
         "href": "#graphPage",
@@ -219,6 +254,11 @@ function createInstance() {
         "data-iconpos": "notext",
         "onclick": "graphShow(this)",
         "role": "button"
+
+         /*displays graph page,
+          * creates graph of this habit's habitData[]
+          * */
+
     });
     var h4HabitName = $("<h4></h4>").text(habitListArray[counter].name).addClass("habitName");
 
@@ -241,6 +281,11 @@ function createInstance() {
     $("#emptyHabits").css({"display": "none"});
 }
 function habitColor(ref) {
+    /*
+     *
+     *
+     *
+     */
 
     var colorVal = (habitListArray[ref].colorTheme);
     console.log("colorVal = " + colorVal);
